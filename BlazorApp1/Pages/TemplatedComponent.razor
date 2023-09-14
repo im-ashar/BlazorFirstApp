@@ -1,0 +1,42 @@
+﻿@page "/temp"
+<h3>Parent Templated Component</h3>
+@* aik child component mai koi aik section hai uska UI hum *@
+@* parent say bhjna chahty hain tw hum templated component bnty hain. *@
+
+@* <ChildTemplatedComponent>
+    <ChildContent>
+        <div>
+            <p>Child Content</p>
+        </div>
+    </ChildContent>
+</ChildTemplatedComponent> *@
+
+@* aik say zayada templated component *@
+
+@* <ChildTemplatedComponent>
+    <MySection1>
+        <p>First section</p>
+    </MySection1>
+</ChildTemplatedComponent> *@
+
+@* <ChildTemplatedComponent>
+    <MySection2>
+        <p>Second Section</p>
+    </MySection2>
+</ChildTemplatedComponent> *@
+
+<ChildTemplatedComponent Context="dataFromChild">
+    <SectionWithData>
+        <p>@dataFromChild.Id</p>
+        <p>@dataFromChild.Name</p>
+        <p>@dataFromChild.Price</p>
+    </SectionWithData>
+</ChildTemplatedComponent>
+
+
+
+
+
+@code {
+
+}

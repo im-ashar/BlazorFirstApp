@@ -1,0 +1,44 @@
+﻿@using Product=Models.Product;
+
+@* agr aik e templated component hai tw nam childcontent hi rakhna hai *@
+
+@* <div>
+    @ChildContent
+</div> *@
+
+@* agr aik say zayada templated component hai tw *@
+
+@* <div>
+    @MySection1
+</div> *@
+
+@* <div>
+    @MySection2
+</div> *@
+
+<div>
+    @{
+        Product productData = new Product { Id = "1", Name = "Hello", Price = "100" };
+    }
+    @SectionWithData(productData)
+</div>
+
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public RenderFragment MySection1 { get; set; }
+
+    [Parameter]
+    public RenderFragment MySection2 { get; set; }
+
+    [Parameter]
+    public RenderFragment<Product> SectionWithData { get; set; }
+
+
+
+
+}
+

@@ -1,0 +1,29 @@
+﻿@page "/allproducts"
+<h1>AllProduct</h1>
+@* <Product Name="Abc" Price="34"></Product>
+<Product Name="Abc" Price="34"></Product>
+
+<CascadingValue Name="Data1" Value=@SendingToGrandChild>
+    <CascadingValue Name="Data2" Value=@SendingToGrandChild2>
+        <CascadingValue Name="Data3" Value="@SendingToGrandChild3">
+            <Product Name="Hello" Price="12"></Product>
+        </CascadingValue>
+    </CascadingValue>
+</CascadingValue> *@
+
+<h1>@Message</h1>
+<Product OnClickCallBack="PrintMessage">
+
+</Product>
+
+@code {
+    public string SendingToGrandChild { get; set; } = "Data from parent";
+    public int SendingToGrandChild2 { get; set; } = 2;
+    public string SendingToGrandChild3 { get; set; } = "Another Data";
+
+    public string Message { get; set; } = "Default";
+    public void PrintMessage(string Data)
+    {
+        Message = Data;
+    }
+}

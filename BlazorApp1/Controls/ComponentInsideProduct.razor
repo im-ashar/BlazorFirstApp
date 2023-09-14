@@ -1,0 +1,13 @@
+﻿<h3>ComponentInsideProduct</h3>
+
+<h3>@DataInsideComponent</h3>
+<h3>@DataInsideComponent2</h3>
+<h3>@DataInsideComponent3</h3>
+@code {
+    [CascadingParameter(Name="Data1")]
+    public string DataInsideComponent { get; set; }
+    [CascadingParameter(Name="Data2")]
+    public int DataInsideComponent2 { get; set; }
+    [CascadingParameter(Name="Data3")]
+    public string DataInsideComponent3 { get; set; }
+}
